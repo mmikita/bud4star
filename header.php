@@ -31,7 +31,7 @@
                         <div class="navigationContainer row">
                             <div
                                 class="logo <?php echo get_theme_mod('logo_bootstrap_columns', 'col-xs-12 col-sm-3')?>">
-                                <div class="inner">
+                                <div class="logoInner">
                                     <a href="#">
                                         <img src="<?php echo wp_get_attachment_url(get_theme_mod('logo_src'))?>" alt="">
                                     </a>
@@ -39,11 +39,9 @@
                             </div>
                             <div
                                 class="menu <?php echo get_theme_mod('menu_bootstrap_columns', 'col-xs-12 col-md-9')?>">
-                                <div>
-                                    <div class="center">
+                        
 
-                                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
+                                        <nav class="navbar navbar-expand-sm navbar-light">
                                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                                 data-target="#navbarSupportedContent"
                                                 aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -60,7 +58,7 @@
                                                         'depth'             => 2,
                                                         'container'         => 'div',
                                                         'container_class'   => '',
-                                                        'container_id'      => '',
+                                                        'container_id'      => 'primaryMenu',
                                                         'menu_class'        => 'navbar-nav mr-auto',
                                                         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                                                         'walker'            => new wp_bootstrap_navwalker())
@@ -70,8 +68,7 @@
                                             <!-- End -->
                                         </nav>
 
-                                    </div>
-                                </div>
+                               
                             </div>
                             <div class="clearfix"></div>
                         </div>

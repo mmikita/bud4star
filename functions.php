@@ -131,9 +131,13 @@ add_action('widgets_init', 'bud4star_widgets_init');
  */
 function bud4star_scripts()
 {
+	wp_enqueue_script('JQuery', get_template_directory_uri() . '/js/JQuery.js', array(), _S_VERSION, true);
+
     wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
     
-    wp_enqueue_script('bud4star-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('bud4star-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('bud4star-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+
     
     wp_enqueue_script('bud4star-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
     
@@ -194,7 +198,8 @@ function bud4Settings($wp_customize)
 {
     //ustawienia globalne
     $wp_customize->add_section('globalSettings', array(
-        'title' => 'Ustawienia globalne'
+		'title' => 'Ustawienia globalne',
+		'priority'   => 1
     ));
     $wp_customize->add_setting('contentWidth', array(
         'default' => '1200'
@@ -207,35 +212,62 @@ function bud4Settings($wp_customize)
     
     //logo i menu            
     $wp_customize->add_section('logo_i_menu', array(
-        'title' => 'Logo i menu'
-    ));
-    $wp_customize->add_setting('logo_bootstrap_columns', array(
-        'default' => 'col-xs-12 col-sm-3'
-    ));
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'bootstrapLogoColumns', array(
-        'label' => 'kolumny bootstrap loga',
-        'section' => 'logo_i_menu',
-        'settings' => 'logo_bootstrap_columns'
-    )));
-    $wp_customize->add_setting('logo_src');
+		'title' => 'Logo i menu',
+		'priority'   => 2
+	));
+	$wp_customize->add_setting('logo_src');
     $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, '
         logo_settings', array(
         'label' => 'Grafika logo',
         'section' => 'logo_i_menu',
         'settings' => 'logo_src'
     )));
-    
-    $wp_customize->add_setting('menu_bootstrap_columns', array(
+	
+	$wp_customize->add_setting('upperSectionColor', array(
+        'default' => '#fff'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'upperSectionColor', array(
+        'label' => 'Kolor górnej sekcji',
+        'section' => 'logo_i_menu',
+        'settings' => 'upperSectionColor'
+    )));
+    $wp_customize->add_setting('logo_bootstrap_columns', array(
+        'default' => 'col-xs-12 col-sm-3'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'bootstrapLogoColumns', array(
+        'label' => '- logo - kolumny bootstrap i inne klasy',
+        'section' => 'logo_i_menu',
+        'settings' => 'logo_bootstrap_columns'
+	)));
+	$wp_customize->add_setting('menu_bootstrap_columns', array(
         'default' => 'col-xs-12 col-md-9'
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'bootstrapMenuColumns', array(
-        'label' => 'kolumny bootstrap menu',
+        'label' => 'menu - kolumny bootstrap i inne klasy',
         'section' => 'logo_i_menu',
         'settings' => 'menu_bootstrap_columns'
-    )));
-    
-    
-    
+	)));
+
+	$wp_customize->add_setting('primaryMenuFontSize', array(
+        'default' => '15'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'primaryMenuFontSize', array(
+        'label' => 'wielkość czcionkie menu(px)',
+        'section' => 'logo_i_menu',
+        'settings' => 'primaryMenuFontSize'
+	)));
+
+	$wp_customize->add_setting('primaryMenuUpper', array(
+        'default' => false
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'primaryMenuUpper', array(
+        'label' => 'Duże litery w menu?',
+		'section' => 'logo_i_menu',
+		'type'      => 'checkbox',
+        'settings' => 'primaryMenuUpper'
+	)));
+
+   
     
 }
 
