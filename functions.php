@@ -126,72 +126,14 @@ function bud4star_widgets_init()
 }
 add_action('widgets_init', 'bud4star_widgets_init');
 
-/**
- * Enqueue scripts and styles.
- */
-function bud4star_scripts()
-{
-	wp_enqueue_script('JQuery', get_template_directory_uri() . '/js/JQuery.js', array(), _S_VERSION, true);
 
-    wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
-    
-	wp_enqueue_script('bud4star-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-	wp_enqueue_script('bud4star-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 
-    
-    wp_enqueue_script('bud4star-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
-    
-    if (is_singular() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
-}
-add_action('wp_enqueue_scripts', 'bud4star_scripts');
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if (defined('JETPACK__VERSION')) {
-    require get_template_directory() . '/inc/jetpack.php';
-}
 
 
 
 function globalSettings()
 {
     include(get_template_directory() . '/styles.php');
-}
-
-function getResources()
-{
-    
-    wp_enqueue_script('bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array(
-        'jquery'
-    ), NULL, true);
-    wp_register_script('jquery.bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery');
-    wp_enqueue_script('jquery.bootstrap.min');
-    
-    wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css', false, NULL, 'all');
-    wp_enqueue_style('style', get_stylesheet_uri());
 }
 
 function bud4Settings($wp_customize)
@@ -266,11 +208,90 @@ function bud4Settings($wp_customize)
 		'type'      => 'checkbox',
         'settings' => 'primaryMenuUpper'
 	)));
-
    
-    
+   
 }
 
-add_action('wp_enqueue_scripts', 'getResources');
+
+/**
+ * Enqueue scripts and styles.
+ */
+function bud4star_scripts()
+{   wp_enqueue_script('JQuery', get_template_directory_uri() . '/js/JQuery.js', array(), _S_VERSION, true);
+    wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_script('bud4star-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+    wp_enqueue_script('bud4star-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
+    wp_enqueue_script('bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array(
+        'jquery'
+    ), NULL, true);
+    wp_register_script('jquery.bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery');
+    wp_enqueue_script('jquery.bootstrap.min');
+    
+    wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css', false, NULL, 'all');
+    wp_enqueue_style('style', get_stylesheet_uri());
+   
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');}
+}
+
+
 add_action('customize_register', 'bud4Settings');
 add_action('wp_head', 'globalSettings');
+add_action('wp_enqueue_scripts', 'bud4star_scripts');
+
+
+add_action( 'customize_register', function( $wp_customize ) {
+    $header_text_controls = array_filter( array(
+        $wp_customize->get_control( 'blogname' ),
+        $wp_customize->get_control( 'blogdescription' ),
+    ) );
+    foreach ( $header_text_controls as $control ) {
+        $control->active_callback = function( $control ) {
+            $setting = $control->manager->get_setting( 'header_textcolor' );
+            if ( ! $setting ) {
+                return true;
+            }
+            return 'blank' !== $setting->value();
+        };
+    }
+}, 11 );
+
+
+
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if (defined('JETPACK__VERSION')) {
+    require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+
+
+
+
+
+
+
+

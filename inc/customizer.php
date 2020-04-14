@@ -58,4 +58,21 @@ function bud4star_customize_partial_blogdescription() {
 function bud4star_customize_preview_js() {
 	wp_enqueue_script( 'bud4star-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
+
+
+
 add_action( 'customize_preview_init', 'bud4star_customize_preview_js' );
+
+
+
+// 1. customizer-preview.js
+function tuts_customize_preview_js() {
+    wp_enqueue_script( 'tuts_customizer_preview', get_template_directory_uri() . '/js/customizer-preview.js', array( 'customize-preview' ), null, true );
+}
+add_action( 'customize_preview_init', 'tuts_customize_preview_js' );
+ 
+// 2. customizer-control.js
+function tuts_customize_control_js() {
+    wp_enqueue_script( 'tuts_customizer_control', get_template_directory_uri() . '/js/customizer-control.js', array( 'customize-controls', 'jquery' ), null, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'tuts_customize_control_js' );
