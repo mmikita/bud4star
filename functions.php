@@ -279,7 +279,7 @@ function bud4Settings($wp_customize)
  * Enqueue scripts and styles.
  */
 function bud4star_scripts()
-{   wp_enqueue_script('JQuery', get_template_directory_uri() . '/js/JQuery.js', array(), _S_VERSION, true);
+{  
     wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_enqueue_script('bud4star-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
     wp_enqueue_script('bud4star-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true);

@@ -1,25 +1,29 @@
 
-$( document ).ready(function() {
+
+
+(function($) {
     body_classes();
-});
+})(jQuery);
 
 
 function body_classes() {
-    var current_width = $(window).width();
+    var current_width = jQuery(window).width();
     if (current_width < 480) {
-        $('body').removeClass( 'body-sm body-md body-lg body-xl' );
-        $('body').addClass( 'body-xs' );
+        jQuery('body').removeClass( 'body-sm body-md body-lg body-xl' );
+        jQuery('body').addClass( 'body-xs' );
     } else if (current_width < 768) {
-      $('body').removeClass( 'body-sm body-md body-lg body-xl' );
-        $('body').addClass( 'body-sm' );
+        jQuery('body').removeClass( 'body-sm body-md body-lg body-xl' );
+        jQuery('body').addClass( 'body-sm' );
     } else if (current_width < 992) {
-        $('body').removeClass( 'body-sm body-md body-lg body-xl' );
-        $('body').addClass( 'body-md' );
+        jQuery('body').removeClass( 'body-sm body-md body-lg body-xl' );
+        jQuery('body').addClass( 'body-md' );
     } else if (current_width < 1200) {
-        $('body').removeClass( 'body-sm body-md body-lg body-xl' );
-        $('body').addClass( 'body-lg' );   
+        jQuery('body').removeClass( 'body-sm body-md body-lg body-xl' );
+        jQuery('body').addClass( 'body-lg' );   
     } else if (current_width < 1450) {
-        $('body').removeClass( 'body-sm body-md body-lg body-xl' );
-        $('body').addClass( 'body-xl' );
+        jQuery('body').removeClass( 'body-sm body-md body-lg body-xl' );
+        jQuery('body').addClass( 'body-xl' );
     }   
     };
+
+    

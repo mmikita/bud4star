@@ -24,7 +24,6 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bud4star' ); ?></a>
-
 	<header>
                 <div class="top-section">
                     <div class="center">
@@ -53,7 +52,7 @@
                                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                                                                             <?php
                                                         wp_nav_menu( array(
-                                                    'menu_id'    => 'primary_menu',
+                                                  
                                                         'theme_location'    => 'menuPrimary',
                                                         'depth'             => 2,
                                                         'container'         => 'div',
