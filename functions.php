@@ -207,6 +207,68 @@ function bud4Settings($wp_customize)
 		'section' => 'logo_i_menu',
 		'type'      => 'checkbox',
         'settings' => 'primaryMenuUpper'
+    )));
+    
+    $wp_customize->add_setting('bootstrapMenuFont', array(
+        'default' => false
+    ));
+
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'bootstrapMenuFont', array(
+        'label' => 'Zmienny font dla przedziałów bootstrap',
+		'section' => 'logo_i_menu',
+        'settings' => 'bootstrapMenuFont',
+        'type'      => 'checkbox'
+    )));
+    
+ 
+
+
+    $wp_customize->add_setting('xs-menufont', array(
+        'default' => 0
+    ));
+  
+
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-menufont', array(
+        'label' => 'menu font xs',
+		'section' => 'logo_i_menu',
+        'settings' => 'xs-menufont'
+    )));
+    
+    $wp_customize->add_setting('sm-menufont', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-menufont', array(
+        'label' => 'menu font sm',
+		'section' => 'logo_i_menu',
+        'settings' => 'sm-menufont'
+    )));
+    
+    $wp_customize->add_setting('md-menufont', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-menufont', array(
+        'label' => 'menu font md',
+		'section' => 'logo_i_menu',
+        'settings' => 'md-menufont'
+    )));
+    
+    $wp_customize->add_setting('lg-menufont', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-menufont', array(
+        'label' => 'menu font lg',
+		'section' => 'logo_i_menu',
+        'settings' => 'lg-menufont'
+    )));
+    $wp_customize->add_setting('xl-menufont', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-menufont', array(
+        'label' => 'menu font xl',
+		'section' => 'logo_i_menu',
+        'settings' => 'xl-menufont'
 	)));
    
    
