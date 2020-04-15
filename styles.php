@@ -31,20 +31,20 @@ margin: 0 auto;
         padding-right:<?php echo get_theme_mod('xs-spaceBetweenPrimary').'px' ?>; } <?php }?>
 
         <?php if( get_theme_mod( 'sm-spaceBetweenPrimary' ) != 0 || get_theme_mod( 'sm-spaceBetweenPrimary' ) != '' ) 
-        { ?> .body-xs #primaryMenu a{ padding-left: <?php echo get_theme_mod('sm-spaceBetweenPrimary').'px' ?>; 
+        { ?> .body-sm #primaryMenu a{ padding-left: <?php echo get_theme_mod('sm-spaceBetweenPrimary').'px' ?>; 
         padding-right:<?php echo get_theme_mod('sm-spaceBetweenPrimary').'px' ?>; } <?php }?>
 
         
         <?php if( get_theme_mod( 'md-spaceBetweenPrimary' ) != 0 || get_theme_mod( 'md-spaceBetweenPrimary' ) != '' ) 
-        { ?> .body-xs #primaryMenu a{ padding-left: <?php echo get_theme_mod('md-spaceBetweenPrimary').'px' ?>; 
+        { ?> .body-md #primaryMenu a{ padding-left: <?php echo get_theme_mod('md-spaceBetweenPrimary').'px' ?>; 
         padding-right:<?php echo get_theme_mod('md-spaceBetweenPrimary').'px' ?>; } <?php }?>
 
         <?php if( get_theme_mod( 'lg-spaceBetweenPrimary' ) != 0 || get_theme_mod( 'lg-spaceBetweenPrimary' ) != '' ) 
-        { ?> .body-xs #primaryMenu a{ padding-left: <?php echo get_theme_mod('lg-spaceBetweenPrimary').'px' ?>; 
+        { ?> .body-lg #primaryMenu a{ padding-left: <?php echo get_theme_mod('lg-spaceBetweenPrimary').'px' ?>; 
         padding-right:<?php echo get_theme_mod('lg-spaceBetweenPrimary').'px' ?>; } <?php }?>
 
         <?php if( get_theme_mod( 'xl-spaceBetweenPrimary' ) != 0 || get_theme_mod( 'xl-spaceBetweenPrimary' ) != '' ) 
-        { ?> .body-xs #primaryMenu a{ padding-left: <?php echo get_theme_mod('xl-spaceBetweenPrimary').'px' ?>; 
+        { ?> .body-xl #primaryMenu a{ padding-left: <?php echo get_theme_mod('xl-spaceBetweenPrimary').'px' ?>; 
         padding-right:<?php echo get_theme_mod('xl-spaceBetweenPrimary').'px' ?>; } <?php }?>
 
     
