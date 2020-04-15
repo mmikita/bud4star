@@ -993,4 +993,5 @@ object {
 #page > header > div > div > div > div.menu > nav {
 	justify-content: flex-end;
 	}
+nav{padding: 0;}
 	
