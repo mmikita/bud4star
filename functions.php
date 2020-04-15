@@ -280,7 +280,90 @@ function bud4Settings($wp_customize)
             'navbar-expand-lg' => __( 'md' )
           )
 	)));
-   
+    $wp_customize->add_setting('menuHoverColor', array(
+        'default' => '#0a7db8'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'menuHoverColor', array(
+        'label' => 'pozycja menu aktywnego elementu i po najechaniu',
+        'section' => 'logo_i_menu',
+        'settings' => 'menuHoverColor'
+    )));
+
+
+
+
+
+	$wp_customize->add_setting('mainSpaceBetweenPrimary', array(
+        'default' => '10'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'mainSpaceBetweenPrimary', array(
+        'label' => 'odstępy między pozycjami',
+        'section' => 'logo_i_menu',
+        'settings' => 'mainSpaceBetweenPrimary'
+	)));
+
+
+
+    $wp_customize->add_setting('spaceBetweenPrimaryBoot', array(
+        'default' => false
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'spaceBetweenPrimaryBoot', array(
+        'label' => 'Zmienne odstępy między pozycjami  dla bootstrap?(px)',
+		'section' => 'logo_i_menu',
+        'settings' => 'spaceBetweenPrimaryBoot',
+        'type'      => 'checkbox'
+    )));
+    
+    $wp_customize->add_setting('xs-spaceBetweenPrimary', array(
+        'default' => 0
+    ));
+  
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-spaceBetweenPrimary', array(
+        'label' => 'odstęp xs',
+		'section' => 'logo_i_menu',
+        'settings' => 'xs-spaceBetweenPrimary'
+    )));
+    
+    $wp_customize->add_setting('sm-spaceBetweenPrimary', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-spaceBetweenPrimary', array(
+        'label' => 'odstęp sm',
+		'section' => 'logo_i_menu',
+        'settings' => 'sm-spaceBetweenPrimary'
+    )));
+    
+    $wp_customize->add_setting('md-spaceBetweenPrimary', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-spaceBetweenPrimary', array(
+        'label' => 'odstęp md',
+		'section' => 'logo_i_menu',
+        'settings' => 'md-spaceBetweenPrimary'
+    )));
+    
+    $wp_customize->add_setting('lg-spaceBetweenPrimary', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-spaceBetweenPrimary', array(
+        'label' => 'odstęp lg',
+		'section' => 'logo_i_menu',
+        'settings' => 'lg-spaceBetweenPrimary'
+    )));
+    $wp_customize->add_setting('xl-spaceBetweenPrimary', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-spaceBetweenPrimary', array(
+        'label' => 'odstęp xl',
+		'section' => 'logo_i_menu',
+        'settings' => 'xl-spaceBetweenPrimary'
+    )));
+
+
+
+
+    
    
 }
 
@@ -288,8 +371,7 @@ function bud4Settings($wp_customize)
 
 function bud4star_scripts()
 {   
-    wp_register_script('jquery.bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery');
-    wp_enqueue_script('jquery.bootstrap.min');
+
     wp_enqueue_script('bud4star-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
     wp_enqueue_script('bud4star-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
     wp_enqueue_script('bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array(
@@ -298,8 +380,9 @@ function bud4star_scripts()
     wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
 
     
-    wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css', false, NULL, 'all');
     wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css', false, NULL, 'all');
+
    
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');}
@@ -328,21 +411,10 @@ add_action( 'customize_register', function( $wp_customize ) {
 }, 11 );
 
 
-
-
-
 require get_template_directory() . '/inc/custom-header.php';
-
-
 require get_template_directory() . '/inc/template-tags.php';
-
-
 require get_template_directory() . '/inc/template-functions.php';
-
-
 require get_template_directory() . '/inc/customizer.php';
-
-
 if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
