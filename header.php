@@ -40,7 +40,7 @@
                                 class="menu <?php echo get_theme_mod('menu_bootstrap_columns', 'col-xs-12 col-md-9')?>">
                         
 
-                                        <nav class="navbar navbar-expand-sm navbar-light">
+                                        <nav class="navbar <?php echo get_theme_mod('hamburgerPrimary', 'xs')?> navbar-light">
                                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                                 data-target="#navbarSupportedContent"
                                                 aria-controls="navbarSupportedContent" aria-expanded="false"

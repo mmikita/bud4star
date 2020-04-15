@@ -989,3 +989,8 @@ object {
 #primaryMenu{
 	margin: 0 auto;
 }
+
+#page > header > div > div > div > div.menu > nav {
+	justify-content: flex-end;
+	}
+	

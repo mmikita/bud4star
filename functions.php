@@ -213,7 +213,6 @@ function bud4Settings($wp_customize)
         'default' => false
     ));
 
-
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'bootstrapMenuFont', array(
         'label' => 'Zmienny font dla przedziałów bootstrap',
 		'section' => 'logo_i_menu',
@@ -221,15 +220,10 @@ function bud4Settings($wp_customize)
         'type'      => 'checkbox'
     )));
     
- 
-
-
     $wp_customize->add_setting('xs-menufont', array(
         'default' => 0
     ));
   
-
-
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-menufont', array(
         'label' => 'menu font xs',
 		'section' => 'logo_i_menu',
@@ -269,6 +263,22 @@ function bud4Settings($wp_customize)
         'label' => 'menu font xl',
 		'section' => 'logo_i_menu',
         'settings' => 'xl-menufont'
+    )));
+    
+    $wp_customize->add_setting('hamburgerPrimary', array(
+        'default' => "sm"
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'hamburger', array(
+        'type' => 'radio',
+        'label' => 'hamburger od',
+		'section' => 'logo_i_menu',
+        'settings' => 'hamburgerPrimary',
+        'choices' => array(
+            'navbar-expand' => __( 'bez' ),
+            'navbar-expand-sm' => __( 'xs' ),
+            'navbar-expand-md' => __( 'sm' ),
+            'navbar-expand-lg' => __( 'md' )
+          )
 	)));
    
    
