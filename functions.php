@@ -164,6 +164,16 @@ function bud4Settings($wp_customize)
         'section' => 'logo_i_menu',
         'settings' => 'logo_src'
     )));
+
+    
+    $wp_customize->add_setting('logoSize', array(
+        'default' => '100'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'logoSize', array(
+        'label' => 'wielkosc logo',
+		'section' => 'logo_i_menu',
+        'settings' => 'logoSize'
+    )));
 	
 	$wp_customize->add_setting('upperSectionColor', array(
         'default' => '#fff'
@@ -194,7 +204,7 @@ function bud4Settings($wp_customize)
         'default' => '15'
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'primaryMenuFontSize', array(
-        'label' => 'wielkość czcionkie menu(px)',
+        'label' => 'wielkość czcionki menu(px)',
         'section' => 'logo_i_menu',
         'settings' => 'primaryMenuFontSize'
 	)));

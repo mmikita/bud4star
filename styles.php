@@ -4,6 +4,10 @@
 max-width: <?php echo get_theme_mod('contentWidth', '1200').'px' ?>;
 margin: 0 auto;
 }
+img.mLogo{
+    max-width: <?php echo get_theme_mod('logoSize', '100').'%' ?>;
+}
+
 .top-section{
     background-color: <?php echo get_theme_mod('upperSectionColor', '#fff') ?>;
 }

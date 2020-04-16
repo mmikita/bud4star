@@ -32,7 +32,7 @@
                                 class="logo <?php echo get_theme_mod('logo_bootstrap_columns', 'col-xs-12 col-sm-3')?>">
                                 <div class="logoInner">
                                     <a href="#">
-                                        <img src="<?php echo wp_get_attachment_url(get_theme_mod('logo_src'))?>" alt="">
+                                        <img class="mLogo" src="<?php echo wp_get_attachment_url(get_theme_mod('logo_src'))?>" alt="">
                                     </a>
                                 </div>
                             </div>
