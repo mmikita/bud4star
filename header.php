@@ -74,5 +74,5 @@
                     </div>
                 </div>
             </header>
-
+            <?php echo wptuts_slider_template(); ?>
 	<div id="content" class="site-content">

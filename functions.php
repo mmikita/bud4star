@@ -9,36 +9,19 @@ require_once('wp_bootstrap_navwalker.php');
  */
 
 if (!defined('_S_VERSION')) {
-    // Replace the version number of the theme on each release.
     define('_S_VERSION', '1.0.0');
 }
 
-if (!function_exists('bud4star_setup')): /**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */ 
+if (!function_exists('bud4star_setup')): 
     function bud4star_setup()
     {
-        /*
-         * Make theme available for translation.
-         * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on bud4star, use a find and replace
-         * to change 'bud4star' to the name of your theme in all the template files.
-         */
+    
         load_theme_textdomain('bud4star', get_template_directory() . '/languages');
         
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
         
-        /*
-         * Let WordPress manage the document title.
-         * By adding theme support, we declare that this theme does not use a
-         * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
-         */
+      
         add_theme_support('title-tag');
         
         /*
@@ -422,6 +405,60 @@ require(get_template_directory() . '/inc/slider.php');
 
 if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+
+
+
+// Create Slider
+ 
+function wptuts_slider_template() {
+ 
+    // Query Arguments
+    $args = array(
+        'post_type' => 'slides',
+        'posts_per_page' => 5
+    );  
+
+    // The Query
+    $the_query = new WP_Query( $args );
+
+    // Check if the Query returns any posts
+    if ( $the_query->have_posts() ) {
+
+        // Start the Slider ?>
+        <div class="flexslider">
+            <ul class="slides">
+
+                <?php
+                // The Loop
+                while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <li>
+
+                    <?php // Check if there's a Slide URL given and if so let's a link to it
+                    if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
+                        <a href="<?php echo esc_url( get_post_meta( get_the_id(), 'wptuts_slideurl', true) ); ?>">
+                    <?php }
+
+                    // The Slide's Image
+                    echo the_post_thumbnail();
+
+                    // Close off the Slide's Link if there is one
+                    if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
+                        </a>
+                    <?php } ?>
+
+                    </li>
+                <?php endwhile; ?>
+
+            </ul><!-- .slides -->
+        </div><!-- .flexslider -->
+
+    <?php }
+
+    // Reset Post Data
+    wp_reset_postdata();
 }
 
 
