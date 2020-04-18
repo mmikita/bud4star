@@ -163,13 +163,14 @@ function bud4star_scripts()
     ), NULL, true);
     wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
     
-    wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css', false, NULL, 'all');
     
     
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+    wp_enqueue_style('style', get_stylesheet_uri());
+
 }
 function enqueue_my_AdminScripts()
 {
