@@ -700,7 +700,7 @@ a:active {
 .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
-	overflow: hidden;
+
 }
 
 .comment-navigation .nav-previous,
@@ -729,7 +729,7 @@ a:active {
 	clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
-	overflow: hidden;
+
 	padding: 0;
 	position: absolute !important;
 	width: 1px;
@@ -996,5 +996,4 @@ nav{padding: 0;}
 .body-sm #primaryMenu .nav-link{padding-top: 40px; }
 #primaryMenu  a{text-align: center;}
 
-.description p {font-size: 50px; color: red; font-weight: bolder;}
 
