@@ -47,8 +47,8 @@
                         <div class="menu <?php echo get_theme_mod('menu_bootstrap_columns', 'col-xs-12 col-md-9')?>">
 
 
-                            <nav class="navbar <?php echo get_theme_mod('hamburgerPrimary', 'xs')?> navbar-light">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            <nav class="topMenuNav navbar <?php echo get_theme_mod('hamburgerPrimary', 'xs')?> navbar-light">
+                                <button class="navbar-toggler topMenuButton" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                     aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
                                                         'theme_location'    => 'menuPrimary',
                                                         'depth'             => 2,
                                                         'container'         => 'div',
-                                                        'container_class'   => '',
+                                                        'container_class'   => 'topMenu',
                                                         'container_id'      => 'primaryMenu',
                                                         'menu_class'        => 'navbar-nav mr-auto',
                                                         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
