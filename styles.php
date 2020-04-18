@@ -2,11 +2,29 @@
 <style>
 .center{
 max-width: <?php echo get_theme_mod('contentWidth', '1200').'px' ?>;
+
+
+
+
+
 margin: 0 auto;
 }
 img.mLogo{
     max-width: <?php echo get_theme_mod('logoSize', '100').'%' ?>;
 }
+
+<?php if( get_theme_mod( 'isBootstrapLogoSize' ) == true) { ?> 
+    <?php if( get_theme_mod( 'xs-logoSize' ) != '0' && get_theme_mod( 'xs-logoSize' ) != '') { ?> .body-xs img.mLogo{ max-width: <?php echo get_theme_mod('xs-logoSize').'%' ?>;} <?php }?>
+    <?php if( get_theme_mod( 'sm-logoSize' ) != '0' && get_theme_mod( 'sm-logoSize' ) != '') { ?> .body-sm img.mLogo{ max-width: <?php echo get_theme_mod('sm-logoSize').'%' ?>;} <?php }?>
+    <?php if( get_theme_mod( 'md-logoSize' ) != '0' && get_theme_mod( 'md-logoSize' ) != '') { ?> .body-md img.mLogo{ max-width: <?php echo get_theme_mod('md-logoSize').'%' ?>;} <?php }?>
+    <?php if( get_theme_mod( 'lg-logoSize' ) != '0' && get_theme_mod( 'lg-logoSize' ) != '') { ?> .body-lg img.mLogo{ max-width: <?php echo get_theme_mod('lg-logoSize').'%' ?>;} <?php }?>
+    <?php if( get_theme_mod( 'xl-logoSize' ) != '0' && get_theme_mod( 'xl-logoSize' ) != '') { ?> .body-xl img.mLogo{ max-width: <?php echo get_theme_mod('xl-logoSize').'%' ?>;} <?php }?>
+        <?php }?>
+
+
+
+
+
 
 .top-section{
     background-color: <?php echo get_theme_mod('upperSectionColor', '#fff') ?>;

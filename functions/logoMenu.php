@@ -10,16 +10,126 @@
         'section' => 'logo_i_menu',
         'settings' => 'logo_src'
     )));
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     $wp_customize->add_setting('logoSize', array(
         'default' => '100'
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'logoSize', array(
-        'label' => 'wielkosc logo',
+        'label' => 'wielkosc logo (max-width %)',
         'section' => 'logo_i_menu',
         'settings' => 'logoSize'
     )));
+
+    $wp_customize->add_setting('isBootstrapLogoSize', array(
+        'default' => false
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'isBootstrapLogoSize', array(
+        'label' => 'różna wielkość dla przedziału bootstrap?',
+        'section' => 'logo_i_menu',
+        'type' => 'checkbox',
+        'settings' => 'isBootstrapLogoSize'
+    )));
+
+
+
+
+
+    $wp_customize->add_setting('xs-logoSize', array(
+        'default' => 0
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-logoSize', array(
+        'label' => 'wielkosc xs',
+        'section' => 'logo_i_menu',
+        'settings' => 'xs-logoSize'
+    )));
+    
+    $wp_customize->add_setting('sm-logoSize', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-logoSize', array(
+        'label' => 'wielkosc sm',
+        'section' => 'logo_i_menu',
+        'settings' => 'sm-logoSize'
+    )));
+    
+    $wp_customize->add_setting('md-logoSize', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-logoSize', array(
+        'label' => 'wielkosc md',
+        'section' => 'logo_i_menu',
+        'settings' => 'md-logoSize'
+    )));
+    
+    $wp_customize->add_setting('lg-logoSize', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-logoSize', array(
+        'label' => 'wielkosc lg',
+        'section' => 'logo_i_menu',
+        'settings' => 'lg-logoSize'
+    )));
+    $wp_customize->add_setting('xl-logoSize', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-logoSize', array(
+        'label' => 'wielkosc xl',
+        'section' => 'logo_i_menu',
+        'settings' => 'xl-logoSize'
+    )));
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     $wp_customize->add_setting('upperSectionColor', array(
         'default' => '#fff'

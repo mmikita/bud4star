@@ -18,6 +18,13 @@ function toogleFunctions(){
     wp.customize.control( 'lg-menuPositionTopPadding' ).toggle();
     wp.customize.control( 'xl-menuPositionTopPadding' ).toggle();
 
+
+    wp.customize.control( 'xs-logoSize' ).toggle();
+    wp.customize.control( 'sm-logoSize' ).toggle();
+    wp.customize.control( 'md-logoSize' ).toggle();
+    wp.customize.control( 'lg-logoSize' ).toggle();
+    wp.customize.control( 'xl-logoSize' ).toggle();
+
 }
 
 (function( $ ) {
@@ -88,6 +95,27 @@ function toogleFunctions(){
             } );
         });
 
+
+        customize( 'isBootstrapLogoSize', function( value ) {
+
+            var siteTitleInput = customize.control( 'blogname' ).container.find( 'input' ); 
+            siteTitleInput.prop( 'disabled', !value.get() ); 
+            value.bind( function( to ) {
+                siteTitleInput.prop( 'disabled', !to );
+            } );
+            var bs = [
+                'xs-logoSize','sm-logoSize','md-logoSize','lg-logoSize','xl-logoSize'
+            ];
+            $.each( bs, function( index, id ) {
+                customize.control( id, function( control ) {
+                    var toggle = function( to ) {
+                        control.toggle( to );
+                    };
+                    toggle( value.get() );
+                    value.bind( toggle );
+                } );
+            } );
+        });
 
 
 
