@@ -10,47 +10,61 @@
  */
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <?php wp_head(); ?>
+
+    <script src="https://cdn.tiny.cloud/1/cm330br0h36coads3cu79lj4au7zoj3qn4kovt693tovrtjy/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin" />
+    </script>
+
+    <script>
+    tinymce.init({
+        selector: '#sliderContent'
+    });
+    </script>
+
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bud4star' ); ?></a>
-	<header>
-                <div class="top-section">
-                    <div class="center">
-                        <div class="navigationContainer row">
-                            <div
-                                class="logo <?php echo get_theme_mod('logo_bootstrap_columns', 'col-xs-12 col-sm-3')?>">
-                                <div class="logoInner">
-                                    <a href="#">
-                                        <img class="mLogo" src="<?php echo wp_get_attachment_url(get_theme_mod('logo_src'))?>" alt="">
-                                    </a>
-                                </div>
+    <?php wp_body_open(); ?>
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text"
+            href="#content"><?php esc_html_e( 'Skip to content', 'bud4star' ); ?></a>
+        <header>
+            <div class="top-section">
+                <div class="center">
+                    <div class="navigationContainer row">
+                        <div class="logo <?php echo get_theme_mod('logo_bootstrap_columns', 'col-xs-12 col-sm-3')?>">
+                            <div class="logoInner">
+                                <a href="#">
+                                    <img class="mLogo"
+                                        src="<?php echo wp_get_attachment_url(get_theme_mod('logo_src'))?>" alt="">
+                                </a>
                             </div>
-                            <div
-                                class="menu <?php echo get_theme_mod('menu_bootstrap_columns', 'col-xs-12 col-md-9')?>">
-                        
+                        </div>
+                        <div class="menu <?php echo get_theme_mod('menu_bootstrap_columns', 'col-xs-12 col-md-9')?>">
 
-                                        <nav class="navbar <?php echo get_theme_mod('hamburgerPrimary', 'xs')?> navbar-light">
-                                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                                data-target="#navbarSupportedContent"
-                                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                                aria-label="Toggle navigation">
-                                                <span class="navbar-toggler-icon"></span>
-                                            </button>
-                                            <!-- End -->
-                                            <!-- Your website Links -->
-                                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                                                                            <?php
+
+                            <nav class="navbar <?php echo get_theme_mod('hamburgerPrimary', 'xs')?> navbar-light">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <!-- End -->
+                                <!-- Your website Links -->
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <?php
                                                         wp_nav_menu( array(
                                                   
                                                         'theme_location'    => 'menuPrimary',
@@ -63,16 +77,16 @@
                                                         'walker'            => new wp_bootstrap_navwalker())
                                                         );
                                                 ?>
-                                            </div>
-                                            <!-- End -->
-                                        </nav>
+                                </div>
+                                <!-- End -->
+                            </nav>
 
-                               
-                            </div>
-                            <div class="clearfix"></div>
+
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-            </header>
-            <?php echo wptuts_slider_template(); ?>
-	<div id="content" class="site-content">
+            </div>
+        </header>
+        <?php echo wptuts_slider_template(); ?>
+        <div id="content" class="site-content">

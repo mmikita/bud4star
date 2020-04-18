@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<script src="https://cdn.tiny.cloud/1/cm330br0h36coads3cu79lj4au7zoj3qn4kovt693tovrtjy/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin" />
+</script>
+
+<script>
+tinymce.init({
+    selector: '.sliderContent'
+});
+</script>
+
 <?php 
 
 
@@ -15,28 +26,42 @@ function wptuts_slider_template() {
     if ( $the_query->have_posts() ) {
 
         // Start the Slider ?>
-        <div class="flexslider">
-            <ul class="slides">
-                <?php
+<div class="flexslider">
+    <ul class="slides">
+        <?php
                 while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                    <li>
+        <li>
 
-                    <?php 
-                    if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
-                        <a href="<?php echo esc_url( get_post_meta( get_the_id(), 'wptuts_slideurl', true) ); ?>">
-                    <?php }
-
+            <?php 
+                    if ( get_post_meta( get_the_id(), 'slideurl', true) != '' ) { ?>
+            <a href="<?php echo esc_url( get_post_meta( get_the_id(), 'slideurl', true) ); ?>">
+                <?php }
                     echo the_post_thumbnail();
+                    if ( get_post_meta( get_the_id(), 'slideurl', true) != '' ) { ?>
+            </a>
+            <?php } ?>
+            <div class="sliderText">
+                <div class="center">
+                    <div class="col-xs-12 col-sm-5 col-sm-offset-7">
+                        <div class="description">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><?php echo  get_post_meta( get_the_id(), 'content', true); ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
 
-                    if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
-                        </a>
-                    <?php } ?>
-                    </li>
-                <?php endwhile; ?>
-            </ul>
-        </div>
 
-    <?php }
+
+        <?php endwhile; ?>
+    </ul>
+</div>
+
+<?php }
     wp_reset_postdata();
 }
 
@@ -53,12 +78,22 @@ $slidelink_2_metabox = array(
         array(
             'name' => 'Slide URL',
             'desc' => '',
-            'id' => 'wptuts_slideurl',
-            'class' => 'wptuts_slideurl',
+            'id' => 'slideurl',
+            'class' => 'slideurl',
             'type' => 'text',
             'rich_editor' => 0,
             'max' => 0
+        ),
+        array(
+            'name' => 'content',
+            'desc' => '',
+            'id' => 'content',
+            'class' => 'content',
+            'type' => 'html',
+            'rich_editor' => 1,
+            'max' => 0
         )
+
     )
 );
 add_action('admin_menu', 'wptuts_add_slidelink_2_meta_box');
@@ -86,8 +121,12 @@ function wptuts_show_slidelink_2_box()
             case 'text':
                 echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', stripslashes($field['desc']);
                 break;
+            case 'html':
+                echo '<textarea class="sliderContent" name="', $field['id'], '" id="', $field['id'], '">', $meta ? $meta : $field['std'], '</textarea>';
+                break;
         }
         echo '<td>', '</tr>';
+
     }
     echo '</table>';
 }

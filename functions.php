@@ -402,15 +402,3 @@ if (defined('JETPACK__VERSION')) {
 }
 
 require_once('inc/sliderSetting.php');
-
-
-
-
-
-
-
-
-
-
-
-
