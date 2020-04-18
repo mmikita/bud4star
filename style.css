@@ -71,6 +71,9 @@ body {
 	margin: 0;
 }
 
+body::-webkit-scrollbar {    display: none;}
+
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -986,7 +989,7 @@ object {
 	}
 nav{padding: 0;}
 #navbarSupportedContent, #primaryMenu{height: 100%;}
-#primaryMenu .nav-link{padding-top: 40px; }
+#primaryMenu .nav-link{padding-top: 40px; white-space: pre;}
 
 #primaryMenu  a{text-align: center;}
 
