@@ -70,7 +70,7 @@
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'bootstrapMenuFont', array(
-        'label' => 'Zmienny font dla przedziałów bootstrap',
+        'label' => 'Zmienny  rozmiar fontu dla przedziałów bootstrap',
         'section' => 'logo_i_menu',
         'settings' => 'bootstrapMenuFont',
         'type' => 'checkbox'
@@ -120,7 +120,75 @@
         'section' => 'logo_i_menu',
         'settings' => 'xl-menufont'
     )));
+
+    $wp_customize->add_setting('menuPositionTopPadding', array(
+        'default' => '40'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'menuPositionTopPadding', array(
+        'label' => 'odstęp pozycji menu od góry(px)',
+        'section' => 'logo_i_menu',
+        'settings' => 'menuPositionTopPadding',
+        
+    )));
+
+
+    $wp_customize->add_setting('isBootstrapMenuTopPadding', array(
+        'default' => false
+    ));
     
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'isBootstrapMenuTopPadding', array(
+        'label' => 'Zmienne odstępy pozycji od góry?(px)',
+        'section' => 'logo_i_menu',
+        'settings' => 'isBootstrapMenuTopPadding',
+        'type' => 'checkbox',
+        
+    )));
+    
+    $wp_customize->add_setting('xs-menuPositionTopPadding', array(
+        'default' => 0
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-menuPositionTopPadding', array(
+        'label' => 'odstęp xs pozycji od góry',
+        'section' => 'logo_i_menu',
+        'settings' => 'xs-menuPositionTopPadding'
+    )));
+    
+    $wp_customize->add_setting('sm-menuPositionTopPadding', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-menuPositionTopPadding', array(
+        'label' => 'odstęp sm pozycji od góry',
+        'section' => 'logo_i_menu',
+        'settings' => 'sm-menuPositionTopPadding'
+    )));
+    
+    $wp_customize->add_setting('md-menuPositionTopPadding', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-menuPositionTopPadding', array(
+        'label' => 'odstęp md pozycji od góry',
+        'section' => 'logo_i_menu',
+        'settings' => 'md-menuPositionTopPadding'
+    )));
+    
+    $wp_customize->add_setting('lg-menuPositionTopPadding', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-menuPositionTopPadding', array(
+        'label' => 'odstęp lg pozycji od góry',
+        'section' => 'logo_i_menu',
+        'settings' => 'lg-menuPositionTopPadding'
+    )));
+    $wp_customize->add_setting('xl-menuPositionTopPadding', array(
+        'default' => 0
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-menuPositionTopPadding', array(
+        'label' => 'odstęp xl pozycji od góry',
+        'section' => 'logo_i_menu',
+        'settings' => 'xl-menuPositionTopPadding'
+    )));
+
     $wp_customize->add_setting('hamburgerPrimary', array(
         'default' => "sm"
     ));

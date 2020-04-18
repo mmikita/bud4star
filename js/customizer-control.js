@@ -12,10 +12,11 @@ function toogleFunctions(){
     wp.customize.control( 'lg-spaceBetweenPrimary' ).toggle();
     wp.customize.control( 'xl-spaceBetweenPrimary' ).toggle();
 
-
-
-
-
+    wp.customize.control( 'xs-menuPositionTopPadding' ).toggle();
+    wp.customize.control( 'sm-menuPositionTopPadding' ).toggle();
+    wp.customize.control( 'md-menuPositionTopPadding' ).toggle();
+    wp.customize.control( 'lg-menuPositionTopPadding' ).toggle();
+    wp.customize.control( 'xl-menuPositionTopPadding' ).toggle();
 
 }
 
@@ -53,6 +54,28 @@ function toogleFunctions(){
             } );
             var bs = [
                 'xs-spaceBetweenPrimary','sm-spaceBetweenPrimary','md-spaceBetweenPrimary','lg-spaceBetweenPrimary','xl-spaceBetweenPrimary'
+            ];
+            $.each( bs, function( index, id ) {
+                customize.control( id, function( control ) {
+                    var toggle = function( to ) {
+                        control.toggle( to );
+                    };
+                    toggle( value.get() );
+                    value.bind( toggle );
+                } );
+            } );
+        });
+
+
+        customize( 'isBootstrapMenuTopPadding', function( value ) {
+
+            var siteTitleInput = customize.control( 'blogname' ).container.find( 'input' ); 
+            siteTitleInput.prop( 'disabled', !value.get() ); 
+            value.bind( function( to ) {
+                siteTitleInput.prop( 'disabled', !to );
+            } );
+            var bs = [
+                'xs-menuPositionTopPadding','sm-menuPositionTopPadding','md-menuPositionTopPadding','lg-menuPositionTopPadding','xl-menuPositionTopPadding'
             ];
             $.each( bs, function( index, id ) {
                 customize.control( id, function( control ) {

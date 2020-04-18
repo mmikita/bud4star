@@ -1,12 +1,4 @@
-
-
-
-
-
-
 <?php 
-
-
 function wptuts_slider_template() {
  
     // Query Arguments
@@ -14,12 +6,9 @@ function wptuts_slider_template() {
         'post_type' => 'slides',
         'posts_per_page' => 5
     );  
-
     // The Query
     $the_query = new WP_Query( $args );
-
     if ( $the_query->have_posts() ) {
-
         // Start the Slider ?>
 <div class="flexslider">
     <ul class="slides">
@@ -50,8 +39,6 @@ function wptuts_slider_template() {
             </div>
         </li>
 
-
-
         <?php endwhile; ?>
     </ul>
 </div>
@@ -59,7 +46,6 @@ function wptuts_slider_template() {
 <?php }
     wp_reset_postdata();
 }
-
 
 $slidelink_2_metabox = array(
     'id' => 'slidelink',

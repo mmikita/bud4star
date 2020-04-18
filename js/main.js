@@ -1,12 +1,5 @@
-
-
-
-
-
 (function($) {
     body_classes();
-
-
 })(jQuery);
 
 
