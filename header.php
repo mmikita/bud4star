@@ -23,15 +23,7 @@
 
     <?php wp_head(); ?>
 
-    <script src="https://cdn.tiny.cloud/1/cm330br0h36coads3cu79lj4au7zoj3qn4kovt693tovrtjy/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin" />
-    </script>
 
-    <script>
-    tinymce.init({
-        selector: '#sliderContent'
-    });
-    </script>
 
 </head>
 

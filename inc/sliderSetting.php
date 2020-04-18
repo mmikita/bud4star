@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<script src="https://cdn.tiny.cloud/1/cm330br0h36coads3cu79lj4au7zoj3qn4kovt693tovrtjy/tinymce/5/tinymce.min.js"
-    referrerpolicy="origin" />
-</script>
 
-<script>
-tinymce.init({
-    selector: '.sliderContent',
-    height: 500,
-  menubar: 'tools',
-  plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste code help wordcount'
-  ],
-  toolbar: 'undo redo | formatselect | ' +
-  'bold italic backcolor | alignleft aligncenter ' +
-  'alignright alignjustify | bullist numlist outdent indent | ' +
-  'removeformat | help', 
-});
-</script>
+
+
+
+
 
 <?php 
 
@@ -53,7 +37,7 @@ function wptuts_slider_template() {
             <?php } ?>
             <div class="sliderText">
                 <div class="center">
-                    <div class="col-xs-12 col-sm-5 col-sm-offset-7">
+                    <div class="<?php echo get_theme_mod('slderTextSize', 'col-xs-12 col-sm-5 offset-sm-7')?>">
                         <div class="description">
                             <div class="row">
                                 <div class="col-md-12">

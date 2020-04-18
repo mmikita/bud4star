@@ -275,11 +275,6 @@ function bud4Settings($wp_customize)
         'section' => 'logo_i_menu',
         'settings' => 'menuHoverColor'
     )));
-    
-    
-    
-    
-    
     $wp_customize->add_setting('mainSpaceBetweenPrimary', array(
         'default' => '10'
     ));
@@ -346,6 +341,25 @@ function bud4Settings($wp_customize)
         'section' => 'logo_i_menu',
         'settings' => 'xl-spaceBetweenPrimary'
     )));
+
+
+    $wp_customize->add_section('slider', array(
+        'title' => 'Slider',
+        'priority' => 3
+    ));
+
+    $wp_customize->add_setting('slderTextSize', array(
+        'default' => 'col-xs-12 col-sm-5 offset-sm-7'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'slderTextSize', array(
+        'label' => 'slider - treść - kolumny',
+        'section' => 'slider',
+        'settings' => 'slderTextSize'
+    )));
+
+
+
+
 }
 function bud4star_scripts()
 {
@@ -357,7 +371,6 @@ function bud4star_scripts()
     ), NULL, true);
     wp_enqueue_style('bud4star-style', get_stylesheet_uri(), array(), _S_VERSION);
     
-    
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css', false, NULL, 'all');
     
@@ -366,10 +379,18 @@ function bud4star_scripts()
         wp_enqueue_script('comment-reply');
     }
 }
+function enqueue_my_AdminScripts()
+{
+    wp_enqueue_script('tinyMCE', get_template_directory_uri() . '/js/tinyMCE.js', array(), _S_VERSION, true);
+    wp_enqueue_script('adminScripts', get_template_directory_uri() . '/js/adminScripts.js', array(), _S_VERSION, true);
+}
+
+
 
 add_action('wp_enqueue_scripts', 'bud4star_scripts');
 add_action('customize_register', 'bud4Settings');
 add_action('wp_head', 'globalSettings');
+add_action('admin_enqueue_scripts', 'enqueue_my_AdminScripts');
 
 
 
