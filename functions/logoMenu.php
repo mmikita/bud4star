@@ -48,7 +48,7 @@
 
 
     $wp_customize->add_setting('xs-logoSize', array(
-        'default' => 0
+        'default' => ''
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-logoSize', array(
@@ -58,7 +58,7 @@
     )));
     
     $wp_customize->add_setting('sm-logoSize', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-logoSize', array(
         'label' => 'wielkosc sm',
@@ -67,7 +67,7 @@
     )));
     
     $wp_customize->add_setting('md-logoSize', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-logoSize', array(
         'label' => 'wielkosc md',
@@ -76,7 +76,7 @@
     )));
     
     $wp_customize->add_setting('lg-logoSize', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-logoSize', array(
         'label' => 'wielkosc lg',
@@ -84,7 +84,7 @@
         'settings' => 'lg-logoSize'
     )));
     $wp_customize->add_setting('xl-logoSize', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-logoSize', array(
         'label' => 'wielkosc xl',
@@ -187,7 +187,7 @@
     )));
     
     $wp_customize->add_setting('xs-menufont', array(
-        'default' => 0
+        'default' => ''
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-menufont', array(
@@ -197,7 +197,7 @@
     )));
     
     $wp_customize->add_setting('sm-menufont', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-menufont', array(
         'label' => 'menu font sm',
@@ -206,7 +206,7 @@
     )));
     
     $wp_customize->add_setting('md-menufont', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-menufont', array(
         'label' => 'menu font md',
@@ -215,7 +215,7 @@
     )));
     
     $wp_customize->add_setting('lg-menufont', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-menufont', array(
         'label' => 'menu font lg',
@@ -223,7 +223,7 @@
         'settings' => 'lg-menufont'
     )));
     $wp_customize->add_setting('xl-menufont', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-menufont', array(
         'label' => 'menu font xl',
@@ -255,7 +255,7 @@
     )));
     
     $wp_customize->add_setting('xs-menuPositionTopPadding', array(
-        'default' => 0
+        'default' => ''
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-menuPositionTopPadding', array(
@@ -265,7 +265,7 @@
     )));
     
     $wp_customize->add_setting('sm-menuPositionTopPadding', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-menuPositionTopPadding', array(
         'label' => 'odstęp sm pozycji od góry',
@@ -274,7 +274,7 @@
     )));
     
     $wp_customize->add_setting('md-menuPositionTopPadding', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-menuPositionTopPadding', array(
         'label' => 'odstęp md pozycji od góry',
@@ -283,7 +283,7 @@
     )));
     
     $wp_customize->add_setting('lg-menuPositionTopPadding', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-menuPositionTopPadding', array(
         'label' => 'odstęp lg pozycji od góry',
@@ -291,7 +291,7 @@
         'settings' => 'lg-menuPositionTopPadding'
     )));
     $wp_customize->add_setting('xl-menuPositionTopPadding', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-menuPositionTopPadding', array(
         'label' => 'odstęp xl pozycji od góry',
@@ -346,7 +346,7 @@
     )));
     
     $wp_customize->add_setting('xs-spaceBetweenPrimary', array(
-        'default' => 0
+        'default' => ''
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xs-spaceBetweenPrimary', array(
@@ -356,7 +356,7 @@
     )));
     
     $wp_customize->add_setting('sm-spaceBetweenPrimary', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sm-spaceBetweenPrimary', array(
         'label' => 'odstęp sm',
@@ -365,7 +365,7 @@
     )));
     
     $wp_customize->add_setting('md-spaceBetweenPrimary', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'md-spaceBetweenPrimary', array(
         'label' => 'odstęp md',
@@ -374,7 +374,7 @@
     )));
     
     $wp_customize->add_setting('lg-spaceBetweenPrimary', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'lg-spaceBetweenPrimary', array(
         'label' => 'odstęp lg',
@@ -382,7 +382,7 @@
         'settings' => 'lg-spaceBetweenPrimary'
     )));
     $wp_customize->add_setting('xl-spaceBetweenPrimary', array(
-        'default' => 0
+        'default' => ''
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'xl-spaceBetweenPrimary', array(
         'label' => 'odstęp xl',
