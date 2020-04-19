@@ -1,15 +1,12 @@
 <?php
 /**
- * The main template file
- *
-
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package bud4star
  */
 
 get_header();
+
+
 ?>
 
 	<div id="primary" class="content-area">

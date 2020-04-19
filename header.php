@@ -10,9 +10,6 @@
  */
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -20,11 +17,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-
     <?php wp_head(); ?>
-
-
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -45,8 +38,6 @@
                             </div>
                         </div>
                         <div class="menu <?php echo get_theme_mod('menu_bootstrap_columns', 'col-xs-12 col-md-9')?>">
-
-
                             <nav class="topMenuNav navbar <?php echo get_theme_mod('hamburgerPrimary', 'xs')?> navbar-light">
                                 <button class="navbar-toggler topMenuButton" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -72,8 +63,6 @@
                                 </div>
                                 <!-- End -->
                             </nav>
-
-
                         </div>
                         <div class="clearfix"></div>
                     </div>

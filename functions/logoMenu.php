@@ -3,6 +3,8 @@
         'title' => 'Logo i menu',
         'priority' => 2
     ));
+
+    
     $wp_customize->add_setting('logo_src');
     $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, '
         logo_settings', array(

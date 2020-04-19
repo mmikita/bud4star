@@ -1014,8 +1014,9 @@ nav{padding: 0;}
 
 .body-xs nav.topMenuNav{margin-right: 30px; margin-left: 30px; margin-bottom: 20px;}
 .body-xs button.topMenuButton {margin: 8px;}
-
 .navigationContainer{margin-right: 0; margin-left: 0;}
+
+.mask {position: absolute; top: 0;}
 
 
 

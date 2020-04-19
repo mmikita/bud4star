@@ -22,6 +22,7 @@ function wptuts_slider_template() {
                 <?php }
                     echo the_post_thumbnail();
                     if ( get_post_meta( get_the_id(), 'slideurl', true) != '' ) { ?>
+                    <img src="<?php echo wp_get_attachment_url(get_theme_mod('aplaImg'))?>" alt="apla" class="mask" width="1920" height="560">
             </a>
             <?php } ?>
             <div class="sliderText">

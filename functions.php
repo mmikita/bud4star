@@ -133,8 +133,6 @@ function bud4Settings($wp_customize)
     require get_template_directory() . '/functions/logoMenu.php';
     
 
-
-
     $wp_customize->add_section('slider', array(
         'title' => 'Slider',
         'priority' => 3
@@ -147,6 +145,39 @@ function bud4Settings($wp_customize)
         'label' => 'slider - treść - kolumny',
         'section' => 'slider',
         'settings' => 'slderTextSize'
+    )));
+
+
+   
+    $wp_customize->add_setting('aplaImg');
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, '
+    aplaImg', array(
+        'label' => 'grafika apli',
+        'section' => 'slider',
+        'settings' => 'aplaImg',
+        'flex_width'        => true, 
+        'flex_height'       => true
+    )));
+
+
+
+    $wp_customize->add_setting('controlsLeft', array(
+        'default' => '30'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'controlsLeft', array(
+        'label' => 'odległosć kontrolek od lewej(%)',
+        'section' => 'slider',
+        'settings' => 'controlsLeft'
+    )));
+
+
+    $wp_customize->add_setting('controlsBottom', array(
+        'default' => '0'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'controlsBottom', array(
+        'label' => 'odległosć kontrolek od dołu(px)',
+        'section' => 'slider',
+        'settings' => 'controlsBottom'
     )));
 
 

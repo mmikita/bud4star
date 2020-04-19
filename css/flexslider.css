@@ -33,6 +33,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+
 }
 .flex-pauseplay span {
   text-transform: capitalize;
@@ -200,8 +202,10 @@ html[xmlns] .flexslider .slides {
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: -40px;
+  bottom: 0;
   text-align: center;
+  z-index: 2;
+  margin-left: 30%;
 }
 .flex-control-nav li {
   margin: 0 6px;
@@ -213,8 +217,8 @@ html[xmlns] .flexslider .slides {
   width: 11px;
   height: 11px;
   display: block;
-  background: #666;
-  background: rgba(0, 0, 0, 0.5);
+  
+  background: rgba(255, 255, 255, 1);
   cursor: pointer;
   text-indent: -9999px;
   -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
