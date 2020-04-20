@@ -225,7 +225,26 @@ img.mLogo {
 }
 
 ?>.flex-control-nav {
-    bottom: <?php echo get_theme_mod('controlsBottom', '0').'px'?>;
-    margin-left: <?php echo get_theme_mod('controlsLeft', '30').'%'?>;
+    bottom: <?php echo get_theme_mod('controlsBottom', '30').'px'?>;
+    padding-left: <?php echo get_theme_mod('controlsLeft', '30').'%'?>;
 }
+
+.flex-direction-nav a:before {
+  font-family: "flexslider-icon";
+  font-size: 40px;
+  display: inline-block;
+  content: '\f001';
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+.flex-direction-nav a:before {
+  content: "<?php echo get_theme_mod('sliderBefore', '\f001')?>";
+}
+
+.flex-direction-nav a.flex-next:before{
+    content: "<?php echo get_theme_mod('sliderNext', '\f001')?>";
+  }
+
 </style>

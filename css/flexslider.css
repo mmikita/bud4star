@@ -140,18 +140,15 @@ html[xmlns] .flexslider .slides {
   font-family: "flexslider-icon";
   font-size: 40px;
   display: inline-block;
-  content: '\f001';
   color: rgba(0, 0, 0, 0.8);
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
-.flex-direction-nav a.flex-next:before {
-  content: '\f002';
-}
+
 .flex-direction-nav .flex-prev {
   left: -50px;
 }
 .flex-direction-nav .flex-next {
-  right: -50px;
+  
   text-align: right;
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
@@ -205,7 +202,6 @@ html[xmlns] .flexslider .slides {
   bottom: 0;
   text-align: center;
   z-index: 2;
-  margin-left: 30%;
 }
 .flex-control-nav li {
   margin: 0 6px;

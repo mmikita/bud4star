@@ -165,7 +165,7 @@ function bud4Settings($wp_customize)
         'default' => '30'
     ));
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'controlsLeft', array(
-        'label' => 'odległosć kontrolek od lewej(%)',
+        'label' => 'odległosć kontrolek od lewej(px)',
         'section' => 'slider',
         'settings' => 'controlsLeft'
     )));
@@ -178,6 +178,25 @@ function bud4Settings($wp_customize)
         'label' => 'odległosć kontrolek od dołu(px)',
         'section' => 'slider',
         'settings' => 'controlsBottom'
+    )));
+
+    $wp_customize->add_setting('sliderNext', array(
+        'default' => '\f002'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sliderNext', array(
+        'label' => 'znacznik strzałki nast. slidera',
+        'section' => 'slider',
+        'settings' => 'sliderNext'
+    )));
+
+
+    $wp_customize->add_setting('sliderBefore', array(
+        'default' => '\f001'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'sliderBefore', array(
+        'label' => 'znacznik strzałki poprz. slidera',
+        'section' => 'slider',
+        'settings' => 'sliderBefore'
     )));
 
 
