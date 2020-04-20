@@ -198,6 +198,54 @@ function bud4Settings($wp_customize)
         'section' => 'slider',
         'settings' => 'sliderBefore'
     )));
+        
+    $wp_customize->add_setting('colorArrow', array(
+        'default' => '#fff'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colorArrow', array(
+        'label' => 'kolor strzałek',
+        'section' => 'slider',
+        'settings' => 'colorArrow'
+    )));
+
+
+    $wp_customize->add_setting('arrowSpace', array(
+        'default' => '0'
+    ));
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'arrowSpace', array(
+        'label' => 'odległość strzałek od krawędzi',
+        'section' => 'slider',
+        'settings' => 'arrowSpace'
+    )));
+
+
+    $wp_customize->add_setting('navSliderBut', array(
+        'default' => '#fff'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'navSliderBut', array(
+        'label' => 'kolor nieaktywnej kontrolki',
+        'section' => 'slider',
+        'settings' => 'navSliderBut'
+    )));
+
+    
+    $wp_customize->add_setting('navSliderHoverBut', array(
+        'default' => '#fff'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'navSliderHoverBut', array(
+        'label' => 'kolor kontrolki po najechaniu',
+        'section' => 'slider',
+        'settings' => 'navSliderHoverBut'
+    )));
+
+    $wp_customize->add_setting('navSliderActiveBut', array(
+        'default' => '#fff'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'navSliderActiveBut', array(
+        'label' => 'kolor aktywnej kontrolki',
+        'section' => 'slider',
+        'settings' => 'navSliderActiveBut'
+    )));
 
 
 

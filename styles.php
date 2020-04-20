@@ -230,21 +230,46 @@ img.mLogo {
 }
 
 .flex-direction-nav a:before {
-  font-family: "flexslider-icon";
-  font-size: 40px;
-  display: inline-block;
-  content: '\f001';
-  color: rgba(0, 0, 0, 0.8);
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    font-family: "flexslider-icon";
+    font-size: 40px;
+    display: inline-block;
+    content: '\f001';
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
-
 
 .flex-direction-nav a:before {
-  content: "<?php echo get_theme_mod('sliderBefore', '\f001')?>";
+    content: "<?php echo get_theme_mod('sliderBefore', '\f001')?>";
 }
 
-.flex-direction-nav a.flex-next:before{
+.flex-direction-nav a.flex-next:before {
     content: "<?php echo get_theme_mod('sliderNext', '\f001')?>";
-  }
+}
+
+.flex-direction-nav a:before,
+.flex-direction-nav a.flex-next:before {
+    color: <?php echo get_theme_mod('colorArrow', '#fff') ?>;
+}
+
+a.flex-next {
+    margin-right: <?php echo get_theme_mod('arrowSpace', '0').'px'?>;
+}
+
+a.flex-prev {
+    margin-left: <?php echo get_theme_mod('arrowSpace', '0').'px'?>;
+}
+
+.flex-control-paging li a.flex-active {
+  background: <?php echo get_theme_mod('navSliderActiveBut', '#fff') ?>;
+}
+.flex-control-paging li a:hover {
+  background: <?php echo get_theme_mod('navSliderHoverBut', '#fff') ?>;
+}
+
+.flex-control-paging li a {
+  background: <?php echo get_theme_mod('navSliderBut', '#fff') ?>;
+
+}
+
 
 </style>
