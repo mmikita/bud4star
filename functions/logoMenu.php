@@ -12,18 +12,6 @@
         'section' => 'logo_i_menu',
         'settings' => 'logo_src'
     )));
-
-
-
-
-
-
-
-
-
-
-
-
     
     
     $wp_customize->add_setting('logoSize', array(
@@ -94,44 +82,6 @@
         'settings' => 'xl-logoSize'
     )));
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     $wp_customize->add_setting('upperSectionColor', array(
         'default' => '#fff'
@@ -391,6 +341,27 @@
         'section' => 'logo_i_menu',
         'settings' => 'xl-spaceBetweenPrimary'
     )));
+
+ 
+    $wp_customize->add_setting('subMenuBack', array(
+        'default' => '#fff'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'subMenuBack', array(
+        'label' => 'Kolor tła podmenu',
+        'section' => 'logo_i_menu',
+        'settings' => 'subMenuBack'
+    )));
+
+
+    $wp_customize->add_setting('subMenuLinkColor', array(
+        'default' => '#000'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'subMenuLinkColor', array(
+        'label' => 'Kolor linku podmenu',
+        'section' => 'logo_i_menu',
+        'settings' => 'subMenuLinkColor'
+    )));
+
 
 
 

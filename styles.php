@@ -270,6 +270,15 @@ a.flex-prev {
   background: <?php echo get_theme_mod('navSliderBut', '#fff') ?>;
 
 }
+#primaryMenu ul.dropdown-menu{
+    background-color:  <?php echo get_theme_mod('subMenuBack', '#fff') ?>;
+    
+}
+
+#primaryMenu ul.dropdown-menu a{
+    color: <?php echo get_theme_mod('subMenuLinkColor', '#000') ?>;
+}
+
 
 
 </style>

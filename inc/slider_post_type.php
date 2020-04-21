@@ -40,4 +40,9 @@
         );
         register_post_type('slides',$post_type_args);
     }
+
+    
+
+
     add_action('init', 'register_slides_posttype');
+    add_action('init', 'register_boxes');
